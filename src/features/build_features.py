@@ -20,16 +20,16 @@ def apply_feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
 def main():
     store = AssignmentStore()
 
-    print("📥 Loading dataset...")
+    print("Loading dataset...")
     df = store.get_processed("dataset.csv")
 
-    print("⚙️ Applying feature engineering...")
+    print(" Applying feature engineering...")
     df = apply_feature_engineering(df)
 
-    print("💾 Saving transformed dataset...")
+    print(" Saving transformed dataset...")
     store.put_processed("transformed_dataset.csv", df)
 
-    print("🎉 Feature engineering complete!")
+    print(" Feature engineering complete!")
 
 
 if __name__ == "__main__":
