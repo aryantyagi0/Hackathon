@@ -17,10 +17,10 @@ def apply_prediction_features(df: pd.DataFrame) -> pd.DataFrame:
 def main():
     store = AssignmentStore()
 
-    print("📥 Loading test data...")
+    print(" Loading test data...")
     df_test = store.get_raw("test_data.csv")
 
-    print("⚙️ Applying prediction-time feature engineering...")
+    print(" Applying prediction-time feature engineering...")
     df_test = apply_prediction_features(df_test)
 
     model = store.get_model("saved_model.pkl")
@@ -29,7 +29,7 @@ def main():
     selected = choose_best_driver(df_test)
     store.put_predictions("results.csv", selected)
 
-    print("🎉 Prediction complete!")
+    print(" Prediction complete!")
 
 
 def choose_best_driver(df: pd.DataFrame) -> pd.DataFrame:
